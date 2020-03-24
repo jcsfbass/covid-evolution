@@ -1,7 +1,11 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        title Covid Evolution
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/vendor/stylesheets/tui-chart.min.css')
+    body
+        block content
+    script(src='/vendor/js/vue.js')
+    script(src='/vendor/js/tui-chart-all.min.js')
+    block js
