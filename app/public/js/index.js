@@ -1,0 +1,1 @@
+new Chart().$mount('#app');

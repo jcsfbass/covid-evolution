@@ -1,6 +1,6 @@
 apps:
   - name: 'covid-evolution'
-    script: ./bin/www
+    script: ./app/bin/www
     instances: 0
     exec_mode: cluster
     watch: true
