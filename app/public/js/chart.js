@@ -58,13 +58,11 @@ const Chart = Vue.extend({
                 });
         }
     },
-    mounted() {
-        fetch('https://api.covid19api.com/summary')
-            .then(response => response.json())
-            .then(summary => {
-                const data = this.getDataFrom(summary);
+    async mounted() {
+        const response = await fetch('https://api.covid19api.com/summary');
+        const json = await response.json();
 
-                this.renderChart(data)
-            });
+        const data = this.getDataFrom(json);
+        return this.renderChart(data);
     }
 });

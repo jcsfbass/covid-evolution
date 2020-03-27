@@ -331,7 +331,7 @@ getJasmineRequireObj().base = function(j$, jasmineGlobal) {
    * @name jasmine.any
    * @since 1.3.0
    * @function
-   * @param {Constructor} clazz - The constructor to check against.
+   * @param {ObjectConstructor} clazz - The constructor to check against.
    */
   j$.any = function(clazz) {
     return new j$.Any(clazz);

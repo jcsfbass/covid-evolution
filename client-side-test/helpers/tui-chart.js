@@ -1,1 +1,5 @@
-const tui = {};
+const tui = {
+    chart: {
+        columnChart: jasmine.createSpy('columnChart')
+    }
+};
