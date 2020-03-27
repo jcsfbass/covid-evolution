@@ -50,7 +50,7 @@ describe('chart', function () {
                             }
                         ]
                     }),
-                    {asymmetricMatch: actual => actual.chart.width === 100}
+                    {asymmetricMatch: actual => actual.chart.width === 100 && actual.theme === 'main-theme'}
                 );
             });
         });
