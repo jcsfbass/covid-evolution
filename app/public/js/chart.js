@@ -59,7 +59,7 @@ const Chart = Vue.extend({
         }
     },
     async mounted() {
-        const response = await fetch('https://api.covid19api.com/summary');
+        const response = await fetch('/api/covid/summary');
         const json = await response.json();
 
         const data = this.getDataFrom(json);

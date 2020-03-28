@@ -29,13 +29,14 @@
     "client-side-test": "./node_modules/karma/bin/karma start karma.ci.conf.js"
   },
   "dependencies": {
-    "acorn": "~7.1.1",
+    "acorn": "^7.1.1",
     "compression": "^1.7.4",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
+    "cookie-parser": "^1.4.4",
+    "debug": "^2.6.9",
+    "express": "^4.16.1",
+    "got": "^10.7.0",
     "helmet": "^3.22.0",
-    "morgan": "~1.9.1",
+    "morgan": "^1.9.1",
     "pug": "^2.0.4"
   },
   "devDependencies": {
@@ -48,6 +49,6 @@
     "puppeteer": "^2.1.1"
   },
   "resolutions": {
-    "minimist": "~1.2.5"
+    "minimist": "^1.2.5"
   }
 }

@@ -7,6 +7,7 @@ const compression = require('compression');
 const cookieParser = require('cookie-parser');
 
 const indexRouter = require('./routes/index');
+const covidApiRouter = require('./routes/api/covid');
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/api/covid', covidApiRouter);
 
 app.use((req, res) => res.sendStatus(404));
 
