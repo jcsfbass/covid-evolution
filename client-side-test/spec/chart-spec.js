@@ -33,28 +33,26 @@ describe('chart', function () {
 
         it('should render chart just one time', () => expect(tui.chart.columnChart).toHaveBeenCalledTimes(1));
 
-        it('should render the chart based on received data', () => {
-            expect(tui.chart.columnChart).toHaveBeenCalledWith(
-                'DOM element',
-                jasmine.objectContaining({
-                    categories: ['Germany', 'Brazil'],
-                    series: [
-                        {
-                            name: 'Total Confirmed',
-                            data: [43938, 2985]
-                        },
-                        {
-                            name: 'Total Deaths',
-                            data: [267, 77]
-                        },
-                        {
-                            name: 'Total Recovered',
-                            data: [5673, 6]
-                        }
-                    ]
-                }),
-                {asymmetricMatch: actual => actual.chart.width === 100 && actual.theme === 'main-theme'}
-            );
-        });
+        it('should render the chart based on received data', () => expect(tui.chart.columnChart).toHaveBeenCalledWith(
+            'DOM element',
+            jasmine.objectContaining({
+                categories: ['Germany', 'Brazil'],
+                series: [
+                    {
+                        name: 'Total Confirmed',
+                        data: [43938, 2985]
+                    },
+                    {
+                        name: 'Total Deaths',
+                        data: [267, 77]
+                    },
+                    {
+                        name: 'Total Recovered',
+                        data: [5673, 6]
+                    }
+                ]
+            }),
+            {asymmetricMatch: actual => actual.chart.width === 100 && actual.theme === 'main-theme'}
+        ));
     });
 });
