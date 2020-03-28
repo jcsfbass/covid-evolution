@@ -6,13 +6,13 @@ const Chart = Vue.extend({
     },
     methods: {
         getDataFrom(summary) {
-            return summary['Countries']
-                .sort((firstCountry, secondCountry) => secondCountry['TotalConfirmed'] - firstCountry['TotalConfirmed'])
+            return summary
+                .sort((firstCountry, secondCountry) => secondCountry.totalConfirmed - firstCountry.totalConfirmed)
                 .map(country => new Object({
-                    countryNames: [country['Country']],
-                    totalConfirmed: [country['TotalConfirmed']],
-                    totalDeaths: [country['TotalDeaths']],
-                    totalRecovered: [country['TotalRecovered']]
+                    countryNames: [country.name],
+                    totalConfirmed: [country.totalConfirmed],
+                    totalDeaths: [country.totalDeaths],
+                    totalRecovered: [country.totalRecovered]
                 }))
                 .reduce((accumulator, currentValue) => {
                     const reducedData = {};

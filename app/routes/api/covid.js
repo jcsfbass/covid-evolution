@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
-const covidClient = require('../../config/covid-client');
+const covidService = require('../../service/covid-service');
 
 router
     .get('/summary', async (req, res) => {
-        const response = await covidClient('summary').json();
+        const countriesSummary = await covidService.summary();
 
-        res.json(response);
+        res.json(countriesSummary);
     });
 
 module.exports = router;
