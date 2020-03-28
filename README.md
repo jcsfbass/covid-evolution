@@ -43,7 +43,7 @@ npm i pm2@4.2.3 -g
 - Run `npm run pm2-stop` to stop/delete
 
 ### Run the tests
-##### _You will need have Chrome, Firefox and Safari to run all tests_
+##### _You will need to have Chrome, Firefox and Safari to run all tests_
 ```
 npm test
 ```
