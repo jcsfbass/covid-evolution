@@ -8,7 +8,7 @@ const Chart = Vue.extend({
         getDataFrom(summary) {
             return summary
                 .sort((firstCountry, secondCountry) => secondCountry.totalConfirmed - firstCountry.totalConfirmed)
-                .map(country => new Object({
+                .map(country => ({
                     countryNames: [country.name],
                     totalConfirmed: [country.totalConfirmed],
                     totalDeaths: [country.totalDeaths],

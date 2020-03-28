@@ -2,7 +2,7 @@ describe('chart', function () {
     const chart = new Chart();
 
     describe('when mounted', function () {
-        it('should render the chart based on received data', async () => {
+        beforeAll(async () => {
             spyOn(window, 'fetch').and.returnValue(new Promise(resolve => {
                 resolve({
                     json() {
@@ -24,12 +24,16 @@ describe('chart', function () {
                 });
             }));
 
-            expect(tui.chart.columnChart).not.toHaveBeenCalled();
-
             await chart.mounted();
+        });
 
-            expect(tui.chart.columnChart).toHaveBeenCalled();
-            expect(tui.chart.columnChart).toHaveBeenCalledTimes(1);
+        it('should fetch summary from internal api', () => {
+            expect(window.fetch).toHaveBeenCalledWith('/api/covid/summary');
+        });
+
+        it('should render chart just one time', () => expect(tui.chart.columnChart).toHaveBeenCalledTimes(1));
+
+        it('should render the chart based on received data', () => {
             expect(tui.chart.columnChart).toHaveBeenCalledWith(
                 'DOM element',
                 jasmine.objectContaining({

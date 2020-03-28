@@ -1,5 +1,3 @@
-process.env.CHROME_BIN = require('puppeteer').executablePath();
-
 module.exports = config => {
     config.set({
         frameworks: ['jasmine'],
@@ -11,10 +9,10 @@ module.exports = config => {
         preprocessors: {},
         colors: true,
         logLevel: config.LOG_INFO,
-        autoWatch: false,
-        restartOnFileChange: false,
-        browsers: ['ChromeHeadless'],
-        singleRun: true,
+        autoWatch: true,
+        restartOnFileChange: true,
+        browsers: ['Chrome', 'Firefox', 'SafariPrivate'],
+        singleRun: false,
         concurrency: Infinity
     })
 };
