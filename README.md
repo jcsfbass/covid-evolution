@@ -11,7 +11,7 @@ I created this app only for study purposes
 
 ## Requirements
 
-### NodeJS e NPM
+### NodeJS and NPM
 
 - Node: 13.11
 - NPM: 6.14
