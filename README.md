@@ -43,12 +43,18 @@ npm i pm2@4.2.3 -g
 - Run `npm run pm2-stop` to stop/delete
 
 ### Run the tests
-##### _You will need to have Chrome, Firefox and Safari to run all tests_
+##### All tests
 ```
 npm test
 ```
 
-##### Only client side unit tests _(it will use internal headless Chrome)_
+##### Only client side unit tests (_you will need to have Chrome, Firefox and Safari to run all tests_)
 ```
 npm run client-side-test
+```
+
+
+##### Only unit tests (_you will need to have Chrome, Firefox and Safari to run all tests_)
+```
+npm run unit-test
 ```
