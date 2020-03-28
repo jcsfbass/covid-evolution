@@ -1,6 +1,6 @@
 # COVID Evolution
 
-I created this app only for study purposes
+I created this app only for study purposes _(data comes from [COVID-19 Api](https://covid19api.com/))_
 
 ## Main tools
 - [Node.js](https://nodejs.org/en/)
