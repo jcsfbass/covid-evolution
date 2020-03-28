@@ -2,6 +2,13 @@
 
 I created this app only for study purposes
 
+## Main tools
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [Vue.js](https://vuejs.org/)
+- [Karma](https://karma-runner.github.io/latest/index.html)
+- [Jasmine](https://jasmine.github.io/)
+
 ## Requirements
 
 ### NodeJS e NPM
@@ -36,12 +43,12 @@ npm i pm2@4.2.3 -g
 - Run `npm run pm2-stop` to stop/delete
 
 ### Run the tests
-
+##### _You will need have Chrome, Firefox and Safari to run all tests_
 ```
 npm test
 ```
 
-##### Only client side unit tests
+##### Only client side unit tests _(it will use internal headless Chrome)_
 ```
 npm run client-side-test
 ```
