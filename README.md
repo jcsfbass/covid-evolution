@@ -48,13 +48,19 @@ npm i pm2@4.2.3 -g
 npm test
 ```
 
-##### Only client side unit tests (_you will need to have Chrome, Firefox and Safari to run all tests_)
+##### Only client side unit tests (_you will need to have Chrome, Firefox and Safari to run these tests_)
 ```
 npm run client-side-test
 ```
 
 
-##### Only unit tests (_you will need to have Chrome, Firefox and Safari to run all tests_)
+##### Only unit tests
 ```
 npm run unit-test
+```
+
+
+##### Only API tests
+```
+npm run isolated-test
 ```
