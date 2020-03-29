@@ -21,13 +21,14 @@
   "private": true,
   "scripts": {
     "start": "node ./app/bin/www",
-    "test": "npx karma start && npx jasmine --config=unit-test/config/jasmine.json",
+    "test": "npx karma start && npx jasmine --config=unit-test/config/jasmine.json && npx jasmine --config=isolated-test/config/jasmine.json",
     "preinstall": "npx npm-force-resolutions",
     "pm2-start": "pm2 start process.yml",
     "pm2-stop": "pm2 stop process.yml && pm2 delete process.yml",
     "pm2-prod": "pm2 start process.yml --env production",
     "client-side-test": "npx karma start karma.local.conf.js",
-    "unit-test": "npx jasmine --config=unit-test/config/jasmine.json"
+    "unit-test": "npx jasmine --config=unit-test/config/jasmine.json",
+    "isolated-test": "npx jasmine --config=isolated-test/config/jasmine.json"
   },
   "dependencies": {
     "acorn": "^7.1.1",
@@ -49,6 +50,7 @@
     "karma-jasmine": "^3.1.1",
     "karma-safari-private-launcher": "^1.0.0",
     "mock-require": "^3.0.3",
+    "nock": "^12.0.3",
     "puppeteer": "^2.1.1"
   },
   "resolutions": {
