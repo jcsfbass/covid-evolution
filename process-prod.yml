@@ -3,9 +3,8 @@ apps:
     script: ./app/bin/www
     instances: 0
     exec_mode: cluster
-    watch: true
+    watch: false
     time: true
     no-autorestart: true
     env:
-      NODE_ENV: development
-      DEBUG: covid-evolution:*
+      NODE_ENV: production

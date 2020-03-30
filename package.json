@@ -25,7 +25,7 @@
     "preinstall": "npx npm-force-resolutions",
     "pm2-start": "pm2 start process.yml",
     "pm2-stop": "pm2 stop process.yml && pm2 delete process.yml",
-    "pm2-prod": "pm2 start process.yml --env production",
+    "pm2-prod": "pm2 start process-prod.yml",
     "client-side-test": "npx karma start karma.local.conf.js",
     "unit-test": "npx jasmine --config=unit-test/config/jasmine.json",
     "isolated-test": "npx jasmine --config=isolated-test/config/jasmine.json"

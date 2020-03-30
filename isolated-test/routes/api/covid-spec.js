@@ -12,7 +12,7 @@ describe('GET /summary', () => {
         server.listen(3001);
     });
 
-    describe('when the request is made', () => {
+    describe('when the COVID-19 API retrieves successful', () => {
         let response;
 
         beforeAll(async () => {
@@ -62,6 +62,28 @@ describe('GET /summary', () => {
                 totalDeaths: 433,
                 totalRecovered: 8481
             }]));
+    });
+
+    describe('when the COVID-19 API retrieves an error', () => {
+        let response;
+
+        beforeAll(async () => {
+            nock('https://api.covid19api.com')
+                .get('/summary')
+                .reply(404);
+
+            try {
+                response = await got('http://localhost:3001/api/covid/summary', {retry: 0});
+            } catch (err) {
+                response = err.response;
+            }
+        });
+
+        it('should retrieve 500', () => expect(response.statusCode).toBe(500));
+
+        it('should has the root cause in the response', () => {
+            expect(response.body).toEqual(jasmine.stringMatching('It was not possible to access COVID-19 API, try again later'));
+        });
     });
 
     afterAll(() => server.close());

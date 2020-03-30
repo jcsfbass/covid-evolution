@@ -1,6 +1,8 @@
 const path = require('path');
 const express = require('express');
 
+const debug = require('debug')('covid-evolution:app');
+
 const morgan = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
@@ -27,9 +29,11 @@ app.use('/api/covid', covidApiRouter);
 
 app.use((req, res) => res.sendStatus(404));
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    debug({req: {headers: req.headers, path: req.path}, err});
 
     res.status(err.status || 500);
     res.render('error');
