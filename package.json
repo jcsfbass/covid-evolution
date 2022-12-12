@@ -35,7 +35,7 @@
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
     "debug": "^2.6.9",
-    "express": "^4.16.1",
+    "express": "^4.17.3",
     "got": "^10.7.0",
     "helmet": "^3.22.0",
     "morgan": "^1.9.1",
